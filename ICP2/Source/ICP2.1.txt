@@ -1,0 +1,10 @@
+stud_weights_lbs= []
+stud_weights_kgs= []
+n = int(input("Enter value for  total number of students :"))
+for i in range(n):
+    stud_weight = int(input("Enter the student weight in lbs :"))
+    stud_weights_lbs.append(stud_weight)
+for i in stud_weights_lbs :
+    weight_in_kgs = i/2.2046
+    stud_weights_kgs.append(int(weight_in_kgs))
+print("The weights of students in kilograms are : ",stud_weights_kgs)

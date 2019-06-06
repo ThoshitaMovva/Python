@@ -1,0 +1,6 @@
+str="good evening"
+def string_alternative():
+          print(str[0:len(str):2])
+def main():
+    string_alternative()
+main()
