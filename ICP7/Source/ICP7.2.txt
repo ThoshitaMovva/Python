@@ -1,0 +1,29 @@
+from bs4 import BeautifulSoup
+import urllib.request
+import nltk
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
+nltk.download('wordnet')
+from nltk.stem import PorterStemmer
+from nltk.stem import WordNetLemmatizer
+from nltk.util import trigrams
+from nltk import ne_chunk
+
+
+# Read the web url into a variable
+url = "https://en.wikipedia.org/wiki/Google"
+
+# use urllib to open the url
+page = urllib.request.urlopen(url)    #opening the defined url
+plain_text = page
+# Use beautiful soup to get the content of webpage
+soup = BeautifulSoup(plain_text, "html.parser") #using beautiful soap to get the text
+
+input = soup.get_text("\n") #Extracting text using soup.get_text
+
+#writig the data to a text file
+with open("out.txt",'w') as f:
+    f.write(str(input.encode("utf-8")))
+
